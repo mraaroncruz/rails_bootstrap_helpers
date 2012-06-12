@@ -3,23 +3,17 @@ module RailsBootstrapHelpers
 
     def striped_table(id=nil, &block)
       content = capture(&block)
-      content_tag(:table, content, id: id, class: "table table-bordered table-striped")
+      content_tag(:table, content, id: id, class: "bordered-table zebra-striped")
     end
 
-    def pills(&block)
-      list_builder "nav-pills", &block
+    def bordered_table(id=nil, &block)
+      content = capture(&block)
+      content_tag(:table, content, id: id, class: "bordered-table")
     end
 
-    def tabs(&block)
-      list_builder "nav-tabs", &block
-    end
-
-    def stacked_tabs(&block)
-      list_builder "nav-tabs", "nav-stacked", &block
-    end
-
-    def stacked_pills(&block)
-      list_builder "nav-pills","nav-stacked", &block
+    def condensed_table(id=nil, &block)
+      content = capture(&block)
+      content_tag(:table, content, id: id, class: "condensed-table")
     end
 
     def bootstrap_link_to(title, link, color, options = {})
@@ -29,11 +23,10 @@ module RailsBootstrapHelpers
 
     def bootstrap_button_class(color = nil)
       case color
-        when :red then "btn btn-danger"
-        when :blue then "btn btn-primary"
-        when :light_blue then "btn btn-info"
-        when :green then "btn btn-success"
-        when :yellow then "btn btn-warning"
+        when :red then "btn danger"
+        when :blue then "btn primary"
+        when :light_blue then "btn info"
+        when :green then "btn success"
         else "btn"
       end
     end
@@ -45,13 +38,5 @@ module RailsBootstrapHelpers
     def conditional_bootstrap_label(condition, text, success = :success, failure = :important)
       condition ? bootstrap_label(text, success) : bootstrap_label(text, failure)
     end
-
-    private
-
-    def list_builder(*classes, &block)
-      content = capture(&block)
-      content_tag(:ul, content, class: "nav #{classes.join(' ')}")
-    end
-
   end
 end
