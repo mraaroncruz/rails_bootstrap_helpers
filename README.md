@@ -1,6 +1,6 @@
 # RailsBootstrapHelpers
 
-Some helpful Twitter Bootstrap Rails helpers.  I felt the pain of the upgrade from Twitter Bootstrap 1.6 to 2.0 and these were the result.
+Some helpful Twitter Bootstrap Rails helpers.  I felt the pain of the upgrade from Twitter Bootstrap 1.4 to 2.0 and these were the result.
 
 ## Installation
 
