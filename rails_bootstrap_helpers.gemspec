@@ -15,6 +15,6 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.name          = "rails_bootstrap_helpers"
   gem.require_paths = ["lib"]
-  gem.add_dependency 'rails', '~> 3.0'
+  gem.add_dependency 'rails', '~> 4.0'
   gem.version       = RailsBootstrapHelpers::VERSION
 end
